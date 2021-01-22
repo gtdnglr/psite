@@ -14,3 +14,9 @@ def blog_home(request):
     else:
         return render(request, 'blog/blog.html', {'pf' : ''})
 
+class BlogPost(DetailView):
+    model = Post
+    template_name = 'blog/post.html'
+    slug_url_kwarg = 'post_slug'
+    slug_field = 'slug'
+
