@@ -14,6 +14,3 @@ def blog_home(request):
     else:
         return render(request, 'blog/blog.html', {'pf' : ''})
 
-class PostDetailView(DetailView):
-    model = Post
-    template_name = 'blog/post.html'
