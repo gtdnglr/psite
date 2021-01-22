@@ -1,0 +1,6 @@
+django
+pillow
+django-ckeditor
+gunicorn
+django-heroku
+python-dotenv

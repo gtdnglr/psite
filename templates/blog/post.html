@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Test new title
+{% endblock %}
+
+{% block content %}
+<div class='container'>
+	<div class='row justify-content-center'>
+		<div class='col-8'>
+            <h1 class='text-center'>{{ post.title }}</h1>
+            <h6 class='text-center'>{{ post.created_on|date:"M d, Y" }} - {{ post.author }}</h6>
+            {{ post.content|safe }}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block customjs %}
+{% endblock %}
