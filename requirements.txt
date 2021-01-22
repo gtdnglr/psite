@@ -4,3 +4,4 @@ django-ckeditor
 gunicorn
 django-heroku
 python-dotenv
+whitenoise
