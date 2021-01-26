@@ -1,6 +1,10 @@
 {% extends "base.html" %}
+
 {% block meta %}{% endblock %}
-{% block title %}Test new title{% endblock %}
+
+{% block customcss %}{% endblock %}
+
+{% block title %}Blog | CodesAlot{% endblock %}
 
 {% block content %}
 <div class='container'>
@@ -23,7 +27,7 @@
 			    </div>
             </a>
 		{% for post in prt %}
-			<a class='home-post' href='#'>
+			<a class='home-post' href='{% url "view_blog_post" post.slug %}'>
 				<div class='row mb-4' style='display:flex;align-items:center;'>
 					<div class='col-4'>
 						<img src='{{ post.featured_image.url }}' style='max-height:300px;' class='img-fluid' alt='Placeholder image prt'>
@@ -86,26 +90,6 @@
 				</div>
         {% endfor %}
 			</div>
-            <div class="row">
-				<div class="col-12">
-					<h2 class="main-title home-post-title mt-4">Trending Posts</h2>
-			    </div>
-			</div>
-			<div class="hor-line"></div>
-        {% for i in article_list.post_count_trending_range %}
-			<a class="home-post" href="#">
-				<div class="row mb-4" style="display:flex;align-items:center;">
-					<div class="col-4">
-						<img src="https://via.placeholder.com/120x100" class="img-fluid" alt="Placeholder image">
-					</div>
-					<div class="col-8 home-post-list">
-						<h2 class="main-title side-post-title d-none d-md-block">This is an example title of a post limited to 59 characters</h2>
-						<h2 class="main-title side-post-title side-post-title-tiny d-block d-sm-block d-md-none">This is an example title of a post limited to 59 characters</h2>
-						<span class="main-author home-post-author"><i class="far fa-clock"></i>JULY 31, 2020 </span>
-					</div>
-				</div>
-			</a>
-        {% endfor %}
         </div>
     </div>
 </div>

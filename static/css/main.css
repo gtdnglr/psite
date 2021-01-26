@@ -9,7 +9,7 @@
 	--main-blk-color: #000000;
 	--main-sm-icon-size: 34px;
 	
-	--nav-header-bg: #F8F8F8;
+	--nav-header-bg: #F5F5F5;
 	--nav-header-text: #000000;
 	--nav-header-hover: #454FC5;
 	
@@ -25,6 +25,7 @@
 }
 
 body {
+    background-color: #FDFDFD;
 	min-height: 100vh;
 	position: relative;
 	margin: 0;

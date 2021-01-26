@@ -1,15 +1,20 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block meta %}{% endblock %}
 
+{% block customcss %}
+<link rel='stylesheet' href='{% static "ckeditor/ckeditor/plugins/lib/highlight/styles/monokai_sublime.css" %}'>
+{% endblock %}
+
 {% block title %}
-    Test new title
+    {{ post.title }} | CodesAlot
 {% endblock %}
 
 {% block content %}
 <div class='container'>
 	<div class='row justify-content-center'>
-		<div class='col-8'>
+		<div class='col-lg-8 col-md-12'>
             <h1 class='text-center'>{{ post.title }}</h1>
             <h6 class='text-center'>{{ post.created_on|date:"M d, Y" }} - {{ post.author }}</h6>
             {{ post.content|safe }}
@@ -18,4 +23,6 @@
 </div>
 {% endblock %}
 
-{% block customjs %}{% endblock %}
+{% block customjs %}
+<script src='{% static "ckeditor/ckeditor/plugins/lib/highlight/highlight.pack.js" %}'></script>
+{% endblock %}

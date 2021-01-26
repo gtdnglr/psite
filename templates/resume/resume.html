@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+
+{% block meta %}{% endblock %}
+
+{% block customcss %}
+<style>
+    .name {
+        font-weight: 600;
+    }
+    .rlink {
+        color: #454FC5;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-weight: 700;
+    }
+    .rlink:hover {
+        color: #454FC5;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-weight: 600;
+    }
+    .category {
+        font-size: 1.2em;
+    }
+    .dutylist {
+        font-size: 0.9em;
+    }
+    .dutylistitem {
+        display: list-item;
+        list-style-type: "▪ ";
+    }
+    .skills {
+        font-size: 0.9em;
+    }
+    hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #000000;
+        margin: 1em 0;
+        padding: 0;
+    }
+</style>
+{% endblock %}
+
+{% block title %}Resume | CodesAlot{% endblock %}
+
+{% block content %}
+<div class="container shadow rounded my-4" style="background-color:#FFFFFF;">
+	<div class="row justify-content-center">
+        <div class="col-12">
+            <div class="col-12 text-center">
+                <h1 class="name mb-0">{{ gen_info.name }}</h1>
+            </div>
+        </div>
+    </div>
+	<div class="row justify-content-center">
+        <div class="col-12 text-center">
+            <a class="rlink" href="{{ gen_info.linkedin }}">LinkedIn</a>
+            ❖
+            <a class="rlink" href="{{ gen_info.github }}">GitHub</a>
+        </div>
+    </div>
+	<div class="row justify-content-center">
+        <h5>{{ gen_info.city_state }}</h5>
+    </div>
+    <hr class="my-1">
+    <div class="font-weight-bold mt-3 text-uppercase category">Work Experience</div>
+    <hr class="my-1">
+	<div class="row justify-content-center">
+        <div class="col-12">
+        {% for job in jobs %}
+            <div class="row">
+                <div class="col-6">
+                    <p class="my-0 font-weight-bold">{{ job.company }}</p>
+                </div>
+                <div class="col-6">
+                    {% if job.currently_employed %}
+                    <p class="my-0 font-weight-bold text-right">{{ job.start_date|date:"M Y" }} – Present</p>
+                    {% else %}
+                    <p class="my-0 font-weight-bold text-right">{{ job.start_date|date:"M Y" }} – {{ job.end_date|date:"M Y" }}</p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                <p class="my-0 font-italic">{{ job.position }}</p>
+                </div>
+                <div class="col-6">
+                <p class="my-0 font-italic text-right">{{ job.city_state }}</p>
+                </div>
+            </div>
+            {% if not job.duty.all %}
+                <p class="jduty">No duties found</p>
+            {% else %}
+                <ul class="dutylist">
+                {% for duty in job.duty.all %}
+                    <li class="dutylistitem">{{ duty.duty }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+    <div class="font-weight-bold text-uppercase category">Education</div>
+    <hr class="my-1">
+	{% for school in schools %}
+		<div class="row">
+			<div class="col-6">
+				<p class="my-0 font-weight-bold">{{ school.school }}</p>
+			</div>
+			<div class="col-6">
+			{% if school.currently_enrolled %}
+				<p class="my-0 font-weight-bold text-right">{{ school.start_date|date:"M Y" }} – Present</p>
+			{% else %}
+				<p class="my-0 font-weight-bold text-right">{{ school.start_date|date:"M Y" }} – {{ school.end_date|date:"M Y" }}</p>
+			{% endif %}
+			</div>
+		</div>
+		<div class="row">
+		<div class="col-6">
+			<p class="my-0 font-italic">{{ school.degree }}</p>
+		</div>
+			<div class="col-6">
+				<p class="my-0 font-italic text-right">{{ school.city_state }}</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6">
+				<p class="mt-0"><span class="font-weight-bold">▪ GPA: </span>{{ school.gpa }}</p>
+			</div>
+		</div>
+	{% endfor %}
+    <div class="font-weight-bold text-uppercase category">Skills & Interests</div>
+    <hr class="my-1">
+	<div class="row  my-1">
+        <div class="col-12">
+            <span class="font-weight-bold my-0 skillstitle">▪ Certifications (in progresss): </span>
+            <span class="my-0 skills">
+                {{ certifications|join:", " }}
+            </span>
+        </div>
+    </div>
+	<div class="row  my-1">
+        <div class="col-12">
+            <span class="font-weight-bold my-0 skillstitle">▪ Personal Skills: </span>
+            <span class="my-0 skills">
+                {{ personal_skills|join:", " }}
+            </span>
+        </div>
+    </div>
+	<div class="row my-1">
+        <div class="col-12">
+            <span class="font-weight-bold my-0 skillstitle">▪ Computer Skills: </span>
+            <span class="my-0 skills">
+                {{ computer_skills|join:", " }}
+            </span>
+        </div>
+    </div>
+	<div class="row my-1">
+        <div class="col-12">
+            <span class="font-weight-bold my-0 skillstitle">▪ Interests: </span>
+            <span class="my-0 skills">
+                {{ interests|join:", " }}
+            </span>
+        </div>
+    </div>
+    <div class="mb-3"></div>
+</div>
+{% endblock %}
+
+{% block customjs %}{% endblock %}

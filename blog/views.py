@@ -6,17 +6,16 @@ def tesat(request):
     return render(request, 'blog/blog.html', {})
 
 def blog_home(request):
-    result = Post.objects.filter(status=1).order_by('-created_on')
+    posts = Post.objects.filter(status=1).order_by('-created_on')
 
-    if result.exists():
-        context = {'pf': result[0], 'prt': result[1:4], 'prb': result[4:11], }
+    if posts.exists():
+        context = {'pf': posts[0], 'prt': posts[1:4], 'prb': posts[4:11], }
         return render(request, 'blog/blog.html', context)
     else:
-        return render(request, 'blog/blog.html', {'pf' : ''})
+        return render(request, 'blog/post.html', {'error' : ''})
 
 class BlogPost(DetailView):
     model = Post
     template_name = 'blog/post.html'
     slug_url_kwarg = 'post_slug'
     slug_field = 'slug'
-
