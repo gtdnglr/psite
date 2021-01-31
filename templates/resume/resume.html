@@ -7,18 +7,6 @@
     .name {
         font-weight: 600;
     }
-    .rlink {
-        color: #454FC5;
-        text-decoration: none;
-        font-size: 1.2em;
-        font-weight: 700;
-    }
-    .rlink:hover {
-        color: #454FC5;
-        text-decoration: none;
-        font-size: 1.2em;
-        font-weight: 600;
-    }
     .category {
         font-size: 1.2em;
     }
@@ -46,7 +34,7 @@
 {% block title %}Resume | CodesAlot{% endblock %}
 
 {% block content %}
-<div class="container shadow rounded my-4" style="background-color:#FFFFFF;">
+<div class="container shadow rounded my-4 resume_background">
 	<div class="row justify-content-center">
         <div class="col-12">
             <div class="col-12 text-center">
@@ -56,9 +44,9 @@
     </div>
 	<div class="row justify-content-center">
         <div class="col-12 text-center">
-            <a class="rlink" href="{{ gen_info.linkedin }}">LinkedIn</a>
+            <a class="resume_link" href="{{ gen_info.linkedin }} target='blank'">LinkedIn</a>
             ❖
-            <a class="rlink" href="{{ gen_info.github }}">GitHub</a>
+            <a class="resume_link" href="{{ gen_info.github }} target='blank'">GitHub</a>
         </div>
     </div>
 	<div class="row justify-content-center">

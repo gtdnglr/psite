@@ -25,22 +25,18 @@
 		<title>{% block title %}Website Title{% endblock %}</title>
 	</head>
 	<body class="d-flex flex-column min-vh-100">
-		<div class="container-fluid navbar-header" style="background-color:var(--nav-header-bg);padding:0 !important;margin-bottom:30px;">
+		<div class="container-fluid navbar-header" style="padding:0 !important;margin-bottom:30px;">
 			<div class="container d-none d-lg-block">	
 				<nav class="navbar navbar-light navbar-expand-lg bg-faded justify-content-center navbar-header">
+					<!--
 					<a href="#" class="navbar-brand d-flex w-50 mr-auto">
 						<img src="{% static 'img/transp_1px.png' %}" width="" height="40" alt="let's get coughy logo" class="navbar-logo">
 					</a>
+					-->
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
 						<span class="navbar-toggler-icon"></span>
 					</button>
 					<div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
-						<div class="input-group justify-content-center">
-							<input type="text" class="form-control btn-outline-secondary form-text-field" placeholder="Search..." aria-label="Search" aria-describedby="search text input">
-							<div class="input-group-append">
-								<button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
-							</div>
-						</div>
 						<ul class="nav navbar-nav ml-auto w-100 justify-content-end">
 							<!--
 							<li class="nav-item">
@@ -51,20 +47,22 @@
 							</li>
 							-->
 							<li class="nav-item">
-								<a class="nav-link navbar-header-link" href="#"><i class="fab fa-linkedin-in"></i></a>
+								<a class="nav-link navbar-header-link" href="https://www.linkedin.com/in/jon-r-robertson/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link navbar-header-link" href="#"><i class="fab fa-github"></i></a>
+								<a class="nav-link navbar-header-link" href="https://github.com/gtdnglr" target="_blank"><i class="fab fa-github"></i></a>
 							</li>
 						</ul>
 					</div>
 				</nav>	
 			</div>	
-			<div id="main-nav-section" class="container-fluid shadow-sm" style="background-color:#FFFFFF;padding:0 !important;">	
-				<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-main" style="background-color:#FFFFFF !important;">
+			<div id="main-nav-section" class="container-fluid shadow-sm" style="padding:0 !important;">
+				<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-main">
+					<!--
 					<a href="#" class="navbar-brand d-lg-none d-block mx-auto">
 						<img src="{% static 'img/transp_1px.png' %}" width="" height="40" alt="let's get coughy logo" class="navbar-logo">
 					</a>
+					-->
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
@@ -73,12 +71,14 @@
 							<li class="nav-item d-lg-none">
 								<div class="row">
 									<div class="col-9">
+										<!--
 										<div class="input-group">
 											<input type="text" class="form-control btn-outline-secondary form-text-field" placeholder="Search..." aria-label="Search" aria-describedby="search text input">
 											<div class="input-group-append">
 												<button class="btn btn-outline-secondary" type="button"><i class="fas fa-search"></i></button>
 											</div>
 										</div>
+										-->
 									</div>
 									<div class="col-3 text-center">
 										<!--
@@ -103,46 +103,52 @@
 			<div id="grey-under-bar" style="height:25px;">
 			</div>
 		</div>
+		<div  class="flex-fill">
 		{% block content %}
 		{% endblock %}
+		</div>
+		<footer>
 		<div class="footer mt-4" style="width:100%;margin-top:5em;">
 			<div class="container footer">
 				<div class="row">
-					<div class="col-md-6 col-lg-4 mt-4 text-center footer" style="height:250px;">
+					<div class="col-md-6 col-lg-4 mt-4 text-center footer">
 						<h1>My Location</h1>
 						<h3></h3>
-						<div id="map" class="map" style="height:250px;width:100%;"></div>
+						<div id="map" class="map" style="height:190px;width:100%;"></div>
 					</div>
-					<div class="col-md-6 col-lg-4 mt-4 footer" style="height:250px;">
+					<div class="col-md-6 col-lg-4 mt-4 footer text-center">
 						<h1>Who I Am</h1>
 						<h3>Hey, I'm Jon. The man, the myth, the programmer. I'm currently enrolled in Western Governors University pursuing a Bachelors degree for Software Engineering. I've always had a passion for technology and programming and have built countless web apps for fun over the years. I've recently transitioned into Python and Django and am loving it so far! This site is actually 100% database driven using Django and SQL.</h3>
 					</div>
-					<div class="col-md-12 col-lg-4 mt-4 text-center footer" style="height:250px;">
+					<div class="col-md-12 col-lg-4 mt-4 text-center footer">
 						<h2>Will Work for Food</h2><br>
-						<p style="margin-top:-0.8em;">Like what you see? Contact me about my career search!</p>
+						<p style="margin-top:-0.8em;">Like what you see? Contact me to see where I am in my career search!</p>
 						<form class="form-inline">
 							<div class="col-md-12">
-								<input type="email" class="form-control w-100 btn-outline-secondary form-text-field" id="subscriber_email" placeholder="Your email address">
+								<input type="email" class="form-control w-100 btn-outline-secondary form_input_field" id="subscriber_email" placeholder="Your email address">
 							</div>
 							<div class="col-md-12">
-								<button type="button" class="mt-2 btn btn-lg btn-block btn-main-solid font-weight-bold">HIRE ME NOW</button>
-								<p class="registrationdisclosure">By submitting I acknowledge that Jon will contact me about a potential job opportunity.</p>
+								<button type="button" class="mt-2 btn btn-lg btn-block button_main font-weight-bold">CONTACT (HIRE?) ME</button>
+								<p class="form_disclosure">By submitting I acknowledge that Jon will contact me about job opportunities.</p>
 							</div>
 						</form>
 					</div>
 				</div>
+			</div>
+			<div class="container-fluid mt-4 copyright">
 				<div class="row">
-					<div class="col-12 text-center">
-						<p>© 2020 <a class="copyright-link" href="#">Furdashian</a>. All Rights Reserved.</p>
+					<div class="col-12 text-center mt-3">
+						<p>© 2020 <a class="footer-link" href="{% url 'v_resume' %}">Jon Robertson</a>. All Rights Reserved.</p>
 					</div>
 				</div>
 			</div>
 		</div>
+		</footer>
 	</body>
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-	<<script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+	<script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
 
 	<script src="{% static 'js/main.js' %}"></script>
 	{% block customjs %}{% endblock %}

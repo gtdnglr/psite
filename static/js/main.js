@@ -14,6 +14,7 @@ $(document).ready(function () {
 });
 
 var map = new ol.Map({
+    interactions: ol.interaction.defaults({mouseWheelZoom:false}),
     target: 'map',
     layers: [
         new ol.layer.Tile({
