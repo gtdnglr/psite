@@ -13,3 +13,16 @@ $(document).ready(function () {
 	document.onscroll = scroll;
 });
 
+var map = new ol.Map({
+    target: 'map',
+    layers: [
+        new ol.layer.Tile({
+            source: new ol.source.OSM()
+        })
+    ],
+    view: new ol.View({
+        center: ol.proj.fromLonLat([-84.388168, 33.748783]),
+        zoom: 8
+    })
+});
+
