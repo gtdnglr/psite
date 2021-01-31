@@ -193,7 +193,8 @@ body {
 
 .resume_background {
     background-color: var(--background_modal) !important;
-}
+	padding: 1em 0.5em 1em 0.5em;
+} 
 
 .resume_link {
 	color: transparent;
