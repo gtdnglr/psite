@@ -36,17 +36,15 @@
 {% block content %}
 <div class="container shadow rounded my-4 resume_background">
 	<div class="row justify-content-center">
-        <div class="col-12">
-            <div class="col-12 text-center">
-                <h1 class="name mb-0">{{ gen_info.name }}</h1>
-            </div>
+        <div class="col-12 text-center">
+            <h1 class="name mb-0">{{ gen_info.name }}</h1>
         </div>
     </div>
 	<div class="row justify-content-center">
         <div class="col-12 text-center">
             <a class="resume_link" href="{{ gen_info.linkedin }}" target="blank">LinkedIn</a>
             ❖
-            <a class="resume_link" href="{{ gen_info.github }}" target="blank'>GitHub</a>
+            <a class="resume_link" href="{{ gen_info.github }}" target="blank">GitHub</a>
         </div>
     </div>
 	<div class="row justify-content-center">
@@ -64,9 +62,9 @@
                 </div>
                 <div class="col-6">
                     {% if job.currently_employed %}
-                    <p class="my-0 font-weight-bold text-right">{{ job.start_date|date:"M Y" }} – Present</p>
+                        <p class="my-0 font-weight-bold text-right">{{ job.start_date|date:"M Y" }} – Present</p>
                     {% else %}
-                    <p class="my-0 font-weight-bold text-right">{{ job.start_date|date:"M Y" }} – {{ job.end_date|date:"M Y" }}</p>
+                        <p class="my-0 font-weight-bold text-right">{{ job.start_date|date:"M Y" }} – {{ job.end_date|date:"M Y" }}</p>
                     {% endif %}
                 </div>
             </div>
