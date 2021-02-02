@@ -5,6 +5,7 @@ from resume import views
 
 urlpatterns = [
     path('', views.view_resume, name='v_resume'),
+    path('aboutme/', views.view_resume, name='v_aboutme'),
 ]
 
 if settings.DEBUG:

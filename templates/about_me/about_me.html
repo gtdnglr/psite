@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block meta %}{% endblock %}
+
+{% block customcss %}
+<style>
+    .name {
+        font-weight: 600;
+    }
+    .category {
+        font-size: 1.2em;
+    }
+    .dutylist {
+        font-size: 0.9em;
+    }
+    .dutylistitem {
+        display: list-item;
+        list-style-type: "▪ ";
+    }
+    .skills {
+        font-size: 0.9em;
+    }
+    hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #000000;
+        margin: 1em 0;
+        padding: 0;
+    }
+</style>
+{% endblock %}
+
+{% block title %}About Me | CodesAlot{% endblock %}
+
+{% block content %}
+<div class="container shadow rounded mb-4 resume_background">
+	<div class="row justify-content-center">
+        <div class="col-12 text-center">
+            <h1 class="name mb-0">{{ gen_info.name }}</h1>
+        </div>
+    </div>
+	<div class="row justify-content-center">
+        <div class="col-12 text-center">
+            <a class="resume_link" href="{{ gen_info.linkedin }}" target="blank">LinkedIn</a>
+            ❖
+            <a class="resume_link" href="{{ gen_info.github }}" target="blank">GitHub</a>
+        </div>
+    </div>
+	<div class="row justify-content-center">
+        <h5>{{ gen_info.city_state }}</h5>
+    </div>
+    <hr class="my-1">
+    <h1>test</h1>
+    <div class="mb-3"></div>
+</div>
+{% endblock %}
+
+{% block customjs %}{% endblock %}

@@ -72,6 +72,14 @@ body {
 	color: transparent;
 }
 
+.toggler_border {
+	border: 1px solid var(--gradient_one) !important;
+}
+
+.toggler_icon {
+  color: var(--gradient_one);
+}
+
 .footer {
 	color: var(--text_light);
 	background-color: var(--background_top);
@@ -193,8 +201,7 @@ body {
 
 .resume_background {
     background-color: var(--background_modal) !important;
-	padding: 0.2em 0.5em 0.5em 0.2em;
-	margin: 0.5em 0.0em 0.5em 0.0em;
+	padding: 0.5em 0.2em 0.5em 0.2em;
 } 
 
 .resume_link {

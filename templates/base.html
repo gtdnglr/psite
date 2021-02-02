@@ -59,13 +59,11 @@
 			</div>	
 			<div id="main-nav-section" class="container-fluid shadow-sm" style="padding:0 !important;">
 				<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-main">
-					<!--
-					<a href="#" class="navbar-brand d-lg-none d-block mx-auto">
+					<a class="navbar-brand d-lg-none d-block mx-auto">
 						<img src="{% static 'img/transp_1px.png' %}" width="" height="40" alt="let's get coughy logo" class="navbar-logo">
 					</a>
-					-->
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
+					<button class="navbar-toggler pull-right toggler_border" type="button" data-toggle="collapse" data-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+						<i class="fas fa-bars toggler_icon"></i>
 					</button>
 					<div class="collapse navbar-collapse" id="mainNav">	
 						<ul class="navbar-nav mr-auto mt-2 mt-lg-0  mx-auto">
@@ -104,7 +102,7 @@
 			<div id="grey-under-bar" style="height:25px;">
 			</div>
 		</div>
-		<div  class="flex-fill">
+		<div class="container flex-fill justify-content-center">
 		{% block content %}
 		{% endblock %}
 		</div>
@@ -115,7 +113,7 @@
 					<div class="col-md-6 col-lg-4 mt-4 text-center footer">
 						<h1>My Location</h1>
 						<h3></h3>
-						<div id="map" class="map" style="height:190px;width:100%;"></div>
+						<div id="map" class="map" style="height:85%;width:100%;"></div>
 					</div>
 					<div class="col-md-6 col-lg-4 mt-4 footer text-center">
 						<h1>Who I Am</h1>
@@ -150,7 +148,6 @@
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 	<script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
-
 	<script src="{% static 'js/main.js' %}"></script>
 	{% block customjs %}{% endblock %}
 </html>

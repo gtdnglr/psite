@@ -20,3 +20,13 @@ def view_resume(request):
     else:
         return render(request, 'resume/resume.html', {'error' : ''})
 
+def view_aboutme(request):
+    gen_info = GeneralInfo.objects.all()
+
+    #if geninfo.exists() and jobs.exists() and duties.exists():
+    if gen_info.exists():
+        context = {'gen_info': gen_info[0], }
+        return render(request, 'resume/about_me.html', context)
+    else:
+        return render(request, 'resume/about_me.html', {'error' : ''})
+
