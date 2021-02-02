@@ -1,0 +1,55 @@
+.resume_background {
+    background-color: var(--background_modal) !important;
+	padding: 0.5em 0.2em 0.5em 0.2em;
+} 
+
+.resume_link {
+	color: transparent;
+	background: linear-gradient(0deg, var(--gradient_one) 0%, var(--gradient_two) 100%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	text-decoration: none;
+	font-size: 1.2em;
+	font-weight: 700;
+}
+
+.resume_link:hover {
+	color: transparent;
+	text-decoration: none;
+	font-size: 1.2em;
+	font-weight: 700;
+}
+
+.resume_name {
+    font-weight: 600;
+}
+
+.resume_category {
+	font-size: 1.2em;
+}
+
+.resume_dutylist {
+	font-size: 0.9em;
+}
+
+.resume_dutylistitem {
+	display: list-item;
+	list-style-type: "▪ ";
+}
+
+.resume_skills {
+	font-size: 0.9em;
+}
+
+.resume_skills_title {
+	font-size: 0.9em;
+}
+
+resume_hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #000000;
+	margin: 1em 0;
+	padding: 0;
+}

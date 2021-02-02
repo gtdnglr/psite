@@ -3,32 +3,7 @@
 {% block meta %}{% endblock %}
 
 {% block customcss %}
-<style>
-    .name {
-        font-weight: 600;
-    }
-    .category {
-        font-size: 1.2em;
-    }
-    .dutylist {
-        font-size: 0.9em;
-    }
-    .dutylistitem {
-        display: list-item;
-        list-style-type: "▪ ";
-    }
-    .skills {
-        font-size: 0.9em;
-    }
-    hr {
-        display: block;
-        height: 1px;
-        border: 0;
-        border-top: 1px solid #000000;
-        margin: 1em 0;
-        padding: 0;
-    }
-</style>
+<link rel="stylesheet" href="{% static 'css/resume.css' %}">
 {% endblock %}
 
 {% block title %}About Me | CodesAlot{% endblock %}

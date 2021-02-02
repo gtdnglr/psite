@@ -1,0 +1,37 @@
+.form_disclosure {
+	color: var(--text_dark);
+	font-size: 0.9em;
+}
+
+.form_input_field {
+	color: var(--text_light) !important;
+    background-color: var(--form_input_background) !important;
+    border-color: var(--gradient_one) !important;
+}
+.form_input_field:hover, .form_input_field:focus, .form_input_field:active, .form_input_field.active, .open>.dropdown-toggle.form_input_field {
+	color: var(--text_light) !important;
+    background-color: var(--form_input_background) !important;
+    border-color: var(gradient_one) !important;
+	box-shadow: none !important;
+}
+
+.button_main { 
+	color: var(--white);
+	background: linear-gradient(345deg, var(--gradient_one) 0%, var(--gradient_two) 100%);
+	border-color: #53DACC; 
+	outline: none;
+	box-shadow: none;
+	font-size: 0.9em;
+}
+ 
+.button_main:hover, 
+.button_main:focus, 
+.button_main:active, 
+.button_main.active, 
+.open .dropdown-toggle.button_main { 
+	color: var(--white);
+	background: linear-gradient(345deg, var(--gradient_one_dark) 0%, var(--gradient_two_dark) 100%);
+	border-color: #53DACC; 
+	outline: none;
+	box-shadow: none;	
+}

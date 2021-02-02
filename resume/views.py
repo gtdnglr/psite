@@ -26,7 +26,7 @@ def view_aboutme(request):
     #if geninfo.exists() and jobs.exists() and duties.exists():
     if gen_info.exists():
         context = {'gen_info': gen_info[0], }
-        return render(request, 'resume/about_me.html', context)
+        return render(request, 'aboutme/aboutme.html', context)
     else:
-        return render(request, 'resume/about_me.html', {'error' : ''})
+        return render(request, 'aboutme/aboutme.html', {'error' : ''})
 

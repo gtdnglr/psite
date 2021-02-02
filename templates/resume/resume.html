@@ -3,32 +3,7 @@
 {% block meta %}{% endblock %}
 
 {% block customcss %}
-<style>
-    .name {
-        font-weight: 600;
-    }
-    .category {
-        font-size: 1.2em;
-    }
-    .dutylist {
-        font-size: 0.9em;
-    }
-    .dutylistitem {
-        display: list-item;
-        list-style-type: "▪ ";
-    }
-    .skills {
-        font-size: 0.9em;
-    }
-    hr {
-        display: block;
-        height: 1px;
-        border: 0;
-        border-top: 1px solid #000000;
-        margin: 1em 0;
-        padding: 0;
-    }
-</style>
+<link rel="stylesheet" href="{% static 'css/resume.css' %}">
 {% endblock %}
 
 {% block title %}Resume | CodesAlot{% endblock %}
@@ -37,7 +12,7 @@
 <div class="container shadow rounded mb-4 resume_background">
 	<div class="row justify-content-center">
         <div class="col-12 text-center">
-            <h1 class="name mb-0">{{ gen_info.name }}</h1>
+            <h1 class="resume_name mb-0">{{ gen_info.name }}</h1>
         </div>
     </div>
 	<div class="row justify-content-center">
@@ -51,7 +26,7 @@
         <h5>{{ gen_info.city_state }}</h5>
     </div>
     <hr class="my-1">
-    <div class="font-weight-bold mt-3 text-uppercase category">Work Experience</div>
+    <div class="font-weight-bold mt-3 text-uppercase resume_category">Work Experience</div>
     <hr class="my-1">
 	<div class="row justify-content-center">
         <div class="col-12">
@@ -79,16 +54,16 @@
             {% if not job.duty.all %}
                 <p class="jduty">No duties found</p>
             {% else %}
-                <ul class="dutylist">
+                <ul class="resume_dutylist">
                 {% for duty in job.duty.all %}
-                    <li class="dutylistitem">{{ duty.duty }}</li>
+                    <li class="resume_dutylistitem">{{ duty.duty }}</li>
                 {% endfor %}
                 </ul>
             {% endif %}
         {% endfor %}
         </div>
     </div>
-    <div class="font-weight-bold text-uppercase category">Education</div>
+    <div class="font-weight-bold text-uppercase resume_category">Education</div>
     <hr class="my-1">
 	{% for school in schools %}
 		<div class="row">
@@ -117,36 +92,36 @@
 			</div>
 		</div>
 	{% endfor %}
-    <div class="font-weight-bold text-uppercase category">Skills & Interests</div>
+    <div class="font-weight-bold text-uppercase resume_category">Skills & Interests</div>
     <hr class="my-1">
 	<div class="row  my-1">
         <div class="col-12">
-            <span class="font-weight-bold my-0 skillstitle">▪ Certifications (in progresss): </span>
-            <span class="my-0 skills">
+            <span class="font-weight-bold my-0 resume_skills_title">▪ Certifications (in progresss): </span>
+            <span class="my-0 resume_skills">
                 {{ certifications|join:", " }}
             </span>
         </div>
     </div>
 	<div class="row  my-1">
         <div class="col-12">
-            <span class="font-weight-bold my-0 skillstitle">▪ Personal Skills: </span>
-            <span class="my-0 skills">
+            <span class="font-weight-bold my-0 resume_skills_title">▪ Personal Skills: </span>
+            <span class="my-0 resume_skills">
                 {{ personal_skills|join:", " }}
             </span>
         </div>
     </div>
 	<div class="row my-1">
         <div class="col-12">
-            <span class="font-weight-bold my-0 skillstitle">▪ Computer Skills: </span>
-            <span class="my-0 skills">
+            <span class="font-weight-bold my-0 resume_skills_title">▪ Computer Skills: </span>
+            <span class="my-0 resume_skills">
                 {{ computer_skills|join:", " }}
             </span>
         </div>
     </div>
 	<div class="row my-1">
         <div class="col-12">
-            <span class="font-weight-bold my-0 skillstitle">▪ Interests: </span>
-            <span class="my-0 skills">
+            <span class="font-weight-bold my-0 resume_skills_title">▪ Interests: </span>
+            <span class="my-0 resume_skills">
                 {{ interests|join:", " }}
             </span>
         </div>

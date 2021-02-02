@@ -1,0 +1,18 @@
+:root {
+  --white: #FFFFFF;
+  --black: #000000;
+  
+  --gradient_one: #33D3C3; 
+  --gradient_two: #30A4DC;
+  --gradient_one_dark: #25AEA0; 
+  --gradient_two_dark: #1F87BA;
+  
+  --text_dark: #838194;
+  --text_light: #EEEDF9;
+  
+  --background_top: #25233A;
+  --background_bottom: #2D2B42;
+  --background_modal: #454260;
+  
+  --form_input_background: #39374C;
+}
