@@ -8,7 +8,8 @@ from resume import views
 urlpatterns = [
     path('', RedirectView.as_view(url='resume/')),
     path('admin/', admin.site.urls),
-    path('resume/', include('resume.urls')),
+    # path('resume/', include('resume.urls')), 
+    path('resume/', views.view_aboutme, name='v_resume'),
     path('aboutme/', views.view_aboutme, name='v_aboutme'),
 ]
 
