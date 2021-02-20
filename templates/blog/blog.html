@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block meta %}{% endblock %}
+
+{% block customcss %}
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+<style>
+</style>
+{% endblock %}
+
+{% block title %}Blog | CodesAlot{% endblock %}
+
+{% block content %}
+<div class='container'>
+	<div class='row'>
+		<div class='col-12 col-lg-8'>
+			<a class='featured-post' href='{% url "v_post" post_newest.slug %}'>
+                <div class='img-header mb-4'>
+                    <div id='featuredPost' class='carousel slide' data-ride='carousel'>
+                        <div class='carousel-inner'>
+                            <div class='carousel-item active' style='overflow:hidden;'>
+                                <img class='d-block w-100' src='{{ post_newest.featured_image.url }}' style='max-height:570px;z-index:1;' alt=''>
+								<div class='black_overlay'></div>
+                                <div class='carousel-caption'>
+                                    <h2 class='home-post-title d-none d-md-block' style='z-index:11;'>{{ post_newest.title }}</h2>
+                                    <h2 class='main-title home-post-title home-post-title-tiny d-block d-sm-block d-md-none' style='z-index:11;'>{{ post_newest.title }}</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+			    </div>
+            </a>
+			<div class='red_square'></div>
+		{% for post in posts_top %}
+			<a class='home-post' href='{% url "v_post" post.slug %}'>
+				<div class='row mb-4' style='display:flex;align-items:center;'>
+					<div class='col-4'>
+						<img src='{{ post.featured_image.url }}' style='max-height:300px;' class='img-fluid' alt='Placeholder image prt'>
+					</div>
+					<div class='col-8 home-post-list'>
+						<h2 class='href-highlight main-title home-post-title d-none d-md-block'>{{ post.title }}</h2>
+						<h2 class='main-title home-post-title home-post-title-tiny d-block d-sm-block d-md-none'>{{ post.title }}</h2>
+						<span class='main-author home-post-author'>By {{ post.author }} <i class='far fa-clock'></i> {{ post.created_on|date:'N d, Y' }} <i class='far fa-comment'></i> 0</span>
+						<h4 class='main-excerpt home-post-excerpt d-none d-sm-block'>{{ post.snippet }}</h4>
+    				</div>
+				</div>
+			</a>
+		{% endfor %}
+		{% for post in posts_bottom %}
+			<a class='home-post' href='{% url "v_post" post.slug %}'>
+				<div class='row mb-4' style='display:flex;align-items:center;'>
+					<div class='col-4'>
+						<img src='{{ post.image.url }}' style='max-height:300px;' class='img-fluid' alt='Placeholder image'>
+					</div>
+					<div class='col-8 home-post-list'>
+						<h2 class='href-highlight main-title home-post-title d-none d-md-block'>{{ post.title }}</h2>
+						<h2 class='main-title home-post-title home-post-title-tiny d-block d-sm-block d-md-none'>{{ post.title }}</h2>
+						<span class='main-author home-post-author'>By {{ post.author }} <i class='far fa-clock'></i> {{ post.created_on|date:'N d, Y' }} <i class='far fa-comment'></i> 0</span>
+						<h4 class='main-excerpt home-post-excerpt d-none d-sm-block'>{{ post.content|slice:':120' }}</h4>
+    				</div>
+				</div>
+			</a>
+		{% endfor %}
+        </div>
+        <div class="col-md-12 col-lg-4">
+			<div class="row">
+				<div class="col-12">
+					<!-- <h2 class="main-title home-post-title">New Projects</h2> -->
+				</div>
+			</div>
+			<div class="hor-line"></div>
+            <div class="row">
+        {% for i in projects_row_1 %}
+				<div class="col-sm-6 mt-4 mt-sm-0">
+					<div class="card">
+						<img src="https://via.placeholder.com/350x300" class="card-img-top img-fluid" alt="Placeholder image">
+						<div class="card-body">
+							<h5 class="card-title font-weight-bold text-center">Project Name</h5>
+							<a href="#" class="btn btn-lg btn-block btn-main-transparent font-weight-bold">Check It Out</a>
+						</div>
+					</div>
+				</div>
+        {% endfor %}
+			</div>
+			<div class="row mt-0 mt-sm-4">
+        {% for i in projects_row_2 %}
+				<div class="col-sm-6 mt-4 mt-sm-0 d-none d-sm-block">
+					<div class="card">
+						<img src="https://via.placeholder.com/350x300" class="card-img-top img-fluid" alt="Placeholder image">
+						<div class="card-body">
+							<h5 class="card-title font-weight-bold text-center">Project Name</h5>
+							<a href="#" class="btn btn-lg btn-block btn-main-transparent font-weight-bold">Check It Out</a>
+						</div>
+					</div>
+				</div>
+        {% endfor %}
+			</div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block customjs %}{% endblock %}

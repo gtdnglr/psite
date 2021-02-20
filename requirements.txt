@@ -6,3 +6,4 @@ django-heroku
 python-dotenv
 whitenoise
 django-summernote
+Pillow
